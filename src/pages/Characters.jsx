@@ -12,8 +12,8 @@ export const Characters = () => {
         try {
             const url = "https://rickandmortyapi.com/api/character";
             fetch(url)
-                .then(respuesta => respuesta.json())
-                .then(resultados => setCharacters(resultados.results))
+                .then(response => response.json())
+                .then(results => setCharacters(results.results))
                 return;
         } catch (error) {
             console.log(error);
