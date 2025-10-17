@@ -33,7 +33,7 @@ export const Characters = () => {
             setSearchTerm={setSearchTerm}
         />
 
-        <div className="grid place-content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15">
+        <div className="grid place-content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 lg:px-25">
             {displayedCharacters.map(character => (
                 <CharacterCard 
                     key={character.id} 
