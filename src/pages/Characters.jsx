@@ -22,10 +22,7 @@ export const Characters = () => {
        consultarApi();
     }, []);
 
-    useEffect(() => {
-        const charactersFiltered = characters.filter( character => character.name.toLowerCase().includes(searchTerm.toLowerCase()));
-        setCharacters(charactersFiltered);
-    }, [searchTerm]);
+    const displayedCharacters = characters.filter(character => character.name.toLowerCase().includes(searchTerm.toLocaleLowerCase().trim()));
     
   return (
 
@@ -37,7 +34,7 @@ export const Characters = () => {
         />
 
         <div className="grid place-content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15">
-            {characters.map(character => (
+            {displayedCharacters.map(character => (
                 <CharacterCard 
                     key={character.id} 
                     character={character}
